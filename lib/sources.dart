@@ -140,23 +140,14 @@ class _ThesourcesState extends State<Thesources> {
                   ListTile(
                     leading: Icon(Icons.album),
                     title: Text(
-                      _headLine[index].title,
+                      _headLine[index].name,
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
-                      _headLine[index].title,
+                      _headLine[index].name,
                       style: TextStyle(color: Colors.grey.shade600),
                     ),
-                  ),
-                  ButtonBar(
-                    children: <Widget>[
-                      FlatButton(
-                        color: Colors.black,
-                        child: const Text('View More'),
-                        onPressed: () {/* ... */},
-                      ),
-                    ],
                   ),
                 ],
               )))));
@@ -164,11 +155,11 @@ class _ThesourcesState extends State<Thesources> {
 
 // ignore: camel_case_types
 class allHeadLines {
-  String author;
-  String title;
-  allHeadLines(this.author, this.title);
+  String id;
+  String name;
+  allHeadLines(this.id, this.name);
   allHeadLines.fromJson(Map<String, dynamic> json) {
-    author = json["HeadLines"];
-    title = json["name"];
+    id = json["id"];
+    name = json["name"];
   }
 }

@@ -32,14 +32,17 @@ class _TheTopState extends State<TheTop> {
 
   @override
   void initState() {
+    isLoading = true;
     fetchNotes().then((value) {
       setState(() {
         _headLine.addAll(value);
+        isLoading = false;
       });
     });
     super.initState();
   }
 
+  bool isLoading;
   Widget build(BuildContext context) => Scaffold(
       drawer: Drawer(
           child: Container(

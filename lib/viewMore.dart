@@ -1,7 +1,26 @@
 import 'package:flutter/material.dart';
+import 'Everything.dart';
 
-class viewPage extends StatelessWidget {
+class viewPage extends StatefulWidget {
   @override
+  _viewPageState createState() => _viewPageState();
+}
+
+class _viewPageState extends State<viewPage> {
+  @override
+  void initState() {
+    isLoading = true;
+    {
+      setState(() {
+        isLoading = false;
+      });
+    }
+    ;
+    super.initState();
+  }
+
+  bool isLoading;
+
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
